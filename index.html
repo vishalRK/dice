@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diece</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster">
+</head>
+<body>
+    <div class="container">
+        <h1>Refresh Me</h1>
+    
+        <div class="dice">
+            <p>Player1</p>
+            <img class="img1" src="dice6.png" alt="">
+        </div>
+        <div class="dice">
+            <p>Player2</p>
+            <img class="img2" src="dice6.png" alt="">
+        </div>
+    </div>
+    <script>
+        var randomNumber1 = Math.floor(Math.random()*6)+1;
+
+        var randomImage = "dice"+randomNumber1+".png";
+        //var randomImageSource = "images/"+randomImage;
+
+         var image1 = document.querySelectorAll("img")[0];
+        image1.setAttribute("src", randomImage);
+
+        var randomNumber2 = Math.floor(Math.random()*6)+1;
+        var randomImageSource2 = "dice"+randomNumber2+".png";
+        document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
+
+        if(randomNumber1 > randomNumber2)
+        {
+            document.querySelector("h1").innerHTML = "Player1 Wins";
+        }
+        else if(randomNumber2 > randomNumber1)
+        {
+            document.querySelector("h1").innerHTML = "Player2 Wins";
+        }
+        else
+        {
+            document.querySelector("h1").innerHTML = "Draw";
+        }
+    </script>
+    </body>
+
+<footer>
+    
+    www 🎲 App Brewery 🎲 com
+  
+</footer>
+</html>
